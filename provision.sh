@@ -22,3 +22,14 @@ fi
 # Allow root to connect from anywhere
 echo "Updating privileges"
 mysql -uroot -p$PASSWORD <<< "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+
+
+## Install redis
+sudo apt-get install make
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+sudo make install
+# Install the service using defaults
+echo -e '' | sudo ./install_server.sh
