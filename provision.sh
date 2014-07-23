@@ -32,4 +32,4 @@ cd redis-stable
 make
 sudo make install
 # Install the service using defaults
-echo -e '' | sudo ./install_server.sh
+echo -e '' | sudo ./utils/install_server.sh
